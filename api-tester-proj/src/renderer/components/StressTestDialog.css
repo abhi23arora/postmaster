@@ -1,0 +1,209 @@
+/* src/renderer/components/StressTestDialog.css */
+
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .dialog-content {
+    background: white;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+  
+  .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+  }
+  
+  .dialog-header h3 {
+    margin: 0;
+    color: #343a40;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #6c757d;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .close-btn:hover:not(:disabled) {
+    background-color: #e9ecef;
+    color: #495057;
+  }
+  
+  .close-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .dialog-body {
+    padding: 20px;
+  }
+  
+  .dialog-body p {
+    margin: 0 0 20px 0;
+    color: #495057;
+    line-height: 1.5;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #343a40;
+  }
+  
+  .form-group input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+  }
+  
+  .form-group input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  .form-group input[type="number"]:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+  }
+  
+  .form-group small {
+    display: block;
+    margin-top: 4px;
+    color: #6c757d;
+    font-size: 12px;
+  }
+  
+  .test-summary {
+    background-color: #f8f9fa;
+    padding: 16px;
+    border-radius: 4px;
+    border-left: 4px solid #007bff;
+  }
+  
+  .test-summary p {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+  }
+  
+  .test-summary p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px;
+    border-top: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+  }
+  
+  .cancel-btn {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .cancel-btn:hover:not(:disabled) {
+    background-color: #5a6268;
+  }
+  
+  .cancel-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .go-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .go-btn:hover:not(:disabled) {
+    background-color: #218838;
+  }
+  
+  .go-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .progress-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    border-top: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+  }
+  
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e9ecef;
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .progress-indicator p {
+    margin: 0;
+    color: #495057;
+    font-size: 14px;
+  }

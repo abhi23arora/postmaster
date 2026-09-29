@@ -1,0 +1,36 @@
+{
+    "name": "postman-clone",
+    "version": "1.0.0",
+    "description": "A Postman-like API testing tool built with Electron, React, and TypeScript",
+    "main": "dist/main.js",
+    "homepage": "./",
+    "scripts": {
+      "build:main": "tsc --project tsconfig.main.json",
+      "build:renderer": "webpack --mode production",
+      "build": "npm run build:main && npm run build:renderer",
+      "build:dev": "npm run build:main && webpack --mode development",
+      "start": "npm run build:dev && electron .",
+      "dev": "npm run build:main && concurrently \"webpack --mode development --watch\" \"wait-on dist/renderer.js && electron .\"",
+      "clean": "rimraf dist"
+    },
+    "devDependencies": {
+      "@types/node": "^20.0.0",
+      "@types/react": "^18.2.0",
+      "@types/react-dom": "^18.2.0",
+      "concurrently": "^8.2.0",
+      "css-loader": "^6.8.0",
+      "electron": "^25.0.0",
+      "html-webpack-plugin": "^5.5.0",
+      "rimraf": "^5.0.0",
+      "style-loader": "^3.3.0",
+      "ts-loader": "^9.4.0",
+      "typescript": "^5.0.0",
+      "wait-on": "^7.0.0",
+      "webpack": "^5.88.0",
+      "webpack-cli": "^5.1.0"
+    },
+    "dependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    }
+  }
